@@ -1,0 +1,4 @@
+venv/
+db.sqlite3
+Html&Css/
+__pycache__/

@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% block ttlte %}
+   Home 
+{% endblock ttlte %}
+
+{% block content %}
+  <dev class="container">
+    <div class="card shadow my-3 p-5">
+      <h3>Home Page</h3>
+      {% if user.is_authenticated %}
+        <p>Welcome {{user.username}} | <a href="{% url 'logout' %}">logout</a></p>
+        <div class="container">
+          <a href="{% url 'password_change' %}">password_change</a>
+        </div>
+        <br>
+        <a href="{% url 'book_list' %}">لیست کتاب ها</a>
+      {% else %}
+        <p><a href="{% url 'login' %}">login</a> |<a href="{% url 'signup' %}">signup</a></p>
+        <br>
+        <a href="{% url 'book_list' %}">لیست کتاب ها</a>
+      {% endif %}
+    </div>
+  </dev>
+{% endblock content %}
