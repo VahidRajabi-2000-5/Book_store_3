@@ -57,6 +57,7 @@ from .forms import BookForm
 
 class BookListView(generic.ListView):
     # model = Book
+    paginate_by = 1
     template_name = 'book/book_list.html'
     context_object_name = 'book'
 
@@ -80,6 +81,7 @@ class BookCreateView(generic.CreateView):
         'ناشر',
         'تعداد_صفحات',
         'قیمت',
+        'cover',
     ]
     template_name = 'book/book_create.html'
     context_object_name = 'form'
@@ -94,6 +96,7 @@ class BookUpdateView(generic.UpdateView):
         'مترجم',
         'ناشر',
         'تعداد_صفحات',
+        'cover',
     ]
 
     template_name = 'book/book_update.html'
